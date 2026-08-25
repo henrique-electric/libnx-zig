@@ -81,7 +81,9 @@ pub const nvioctl_zbc_entry = extern struct {
     color_l2: [4]u32,
     depth:       u32,
     ref_cnt:     u32,
-    format:      u32
+    format:      u32,
+    @"type":     u32,
+    size:        u32
 };
 
 pub const nvioctl_gpu_characteristics = extern struct {
