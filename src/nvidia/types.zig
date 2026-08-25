@@ -1,17 +1,17 @@
-const iova_t = u64;
+pub const iova_t = u64;
 
-const NvLayout = enum(i32) {
+pub const NvLayout = enum(i32) {
     NvLayout_Pitch = 1,
     NvLayout_Tiled = 2,
     NvLayout_BlockLinear = 3,
 };
 
-const NvDisplayScanFormat = enum(i32) {
+pub const NvDisplayScanFormat = enum(i32) {
     NvDisplayScanFormat_Progressive = 0,
     NvDisplayScanFormat_Interlaced = 1,
 };
 
-const NvKind = enum(i32) {
+pub const NvKind = enum(i32) {
     NvKind_Pitch = 0x0,
     NvKind_Z16 = 0x1,
     NvKind_Z16_2C = 0x2,
@@ -247,8 +247,8 @@ const NvKind = enum(i32) {
     NvKind_Invalid = 0xff,
 };
 
-const NvColorFormat = enum(i32) {
-        NvColorFormat_Unspecified = 0x0000000000,
+pub const NvColorFormat = enum(i32) {
+    NvColorFormat_Unspecified = 0x0000000000,
     NvColorFormat_NonColor8 = 0x0009200408,
     NvColorFormat_NonColor16 = 0x0009200A10,
     NvColorFormat_NonColor24 = 0x0009201A18,
