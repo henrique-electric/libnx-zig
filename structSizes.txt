@@ -1,0 +1,316 @@
+
+== libnx/include/switch/types.h ==
+  Uuid (struct)                                  16
+  UtilFloat3 (struct)                            12
+
+== libnx/include/switch/kernel/rwlock.h ==
+  RwLock (struct)                                32
+
+== libnx/include/switch/kernel/semaphore.h ==
+  Semaphore (struct)                             16
+
+== libnx/include/switch/kernel/barrier.h ==
+  Barrier (struct)                               24
+
+== libnx/include/switch/kernel/event.h ==
+  Event (struct)                                 12
+
+== libnx/include/switch/kernel/levent.h ==
+  LEvent (struct)                                8
+
+== libnx/include/switch/kernel/uevent.h ==
+  UEvent (struct)                                40
+
+== libnx/include/switch/kernel/wait.h ==
+  Waiter (struct)                                16
+  Waitable (struct)                              32
+  WaitableNode (struct)                          16
+
+== libnx/include/switch/kernel/thread.h ==
+  Thread (struct)                                56
+
+== libnx/include/switch/kernel/tmem.h ==
+  TransferMemory (struct)                        40
+
+== libnx/include/switch/kernel/shmem.h ==
+  SharedMemory (struct)                          32
+
+== libnx/include/switch/kernel/jit.h ==
+  Jit (struct)                                   56
+
+== libnx/include/switch/kernel/virtmem.h ==
+
+== libnx/include/switch/kernel/svc.h ==
+  MemoryInfo (struct)                            40
+  PhysicalMemoryInfo (struct)                    24
+  SecmonArgs (struct)                            64
+  LastThreadContext (struct)                     32
+  CreateProcessFlags (struct)                    4
+  DebugEventInfo (struct)                        64
+
+== libnx/include/switch/display/types.h ==
+  NativeHandle (struct)                          12
+
+== libnx/include/switch/display/native_window.h ==
+  NWindow (struct)                               128
+
+== libnx/include/switch/display/framebuffer.h ==
+  Framebuffer (struct)                           80
+
+== libnx/include/switch/display/buffer_producer.h ==
+  BqRect (struct)                                16
+  BqBufferInput (struct)                         84
+  BqBufferOutput (struct)                        16
+  BqGraphicBuffer (struct)                       32
+
+== libnx/include/switch/display/binder.h ==
+  Binder (struct)                                24
+
+== libnx/include/switch/display/parcel.h ==
+  ParcelHeader (struct)                          16
+  Parcel (struct)                                1056
+
+== libnx/include/switch/nvidia/address_space.h ==
+  NvAddressSpace (struct)                        12
+
+== libnx/include/switch/nvidia/channel.h ==
+  NvChannel (struct)                             8
+
+== libnx/include/switch/nvidia/fence.h ==
+  NvMultiFence (struct)                          36
+
+== libnx/include/switch/nvidia/gpu_channel.h ==
+  NvGpuChannel (struct)                          16440
+
+== libnx/include/switch/nvidia/ioctl.h ==
+  nvioctl_zcull_info (struct)                    40
+  nvioctl_zbc_entry (struct)                     52
+  nvioctl_gpu_characteristics (struct)           160
+  nvioctl_va_region (struct)                     24
+  nvioctl_zbc_slot_mask (struct)                 8
+  nvioctl_gpu_time (struct)                      16
+  nvioctl_fence (struct)                         8
+  nvioctl_gpfifo_entry (struct)                  8
+  nvioctl_cmdbuf (struct)                        12
+  nvioctl_reloc (struct)                         16
+  nvioctl_reloc_shift (struct)                   4
+  nvioctl_syncpt_incr (struct)                   20
+  nvioctl_command_buffer_map (struct)            8
+  nvioctl_clk_rate (struct)                      8
+  NvNotification (struct)                        16
+  NvError (struct)                               128
+
+== libnx/include/switch/nvidia/map.h ==
+  NvMap (struct)                                 32
+
+== libnx/include/switch/nvidia/graphic_buffer.h ==
+  NvSurface (struct)                             88
+  NvGraphicBuffer (struct)                       336
+
+== libnx/include/switch/services/hid.h ==
+  HidAnalogStickState (struct)                   8
+  HidVector (struct)                             12
+  HidDirectionState (struct)                     36
+  HidCommonLifoHeader (struct)                   32
+  HidDebugPadState (struct)                      32
+  HidDebugPadStateAtomicStorage (struct)         40
+  HidDebugPadLifo (struct)                       712
+  HidDebugPadSharedMemoryFormat (struct)         1024
+  HidTouchState (struct)                         40
+  HidTouchScreenState (struct)                   656
+  HidTouchScreenStateAtomicStorage (struct)      664
+  HidTouchScreenLifo (struct)                    11320
+  HidTouchScreenSharedMemoryFormat (struct)      12288
+  HidTouchScreenConfigurationForNx (struct)      16
+  HidMouseState (struct)                         40
+  HidMouseStateAtomicStorage (struct)            48
+  HidMouseLifo (struct)                          848
+  HidMouseSharedMemoryFormat (struct)            1024
+  HidKeyboardState (struct)                      48
+  HidKeyboardStateAtomicStorage (struct)         56
+  HidKeyboardLifo (struct)                       984
+  HidKeyboardSharedMemoryFormat (struct)         1024
+  HidBasicXpadState (struct)                     32
+  HidBasicXpadStateAtomicStorage (struct)        40
+  HidBasicXpadLifo (struct)                      712
+  HidBasicXpadSharedMemoryEntry (struct)         1024
+  HidBasicXpadSharedMemoryFormat (struct)        4096
+  HidDigitizerState (struct)                     88
+  HidDigitizerStateAtomicStorage (struct)        96
+  HidDigitizerLifo (struct)                      1664
+  HidDigitizerSharedMemoryFormat (struct)        4096
+  HidHomeButtonState (struct)                    16
+  HidHomeButtonStateAtomicStorage (struct)       24
+  HidHomeButtonLifo (struct)                     440
+  HidHomeButtonSharedMemoryFormat (struct)       512
+  HidSleepButtonState (struct)                   16
+  HidSleepButtonStateAtomicStorage (struct)      24
+  HidSleepButtonLifo (struct)                    440
+  HidSleepButtonSharedMemoryFormat (struct)      512
+  HidCaptureButtonState (struct)                 16
+  HidCaptureButtonStateAtomicStorage (struct)    24
+  HidCaptureButtonLifo (struct)                  440
+  HidCaptureButtonSharedMemoryFormat (struct)    512
+  HidInputDetectorState (struct)                 16
+  HidInputDetectorStateAtomicStorage (struct)    24
+  HidInputDetectorLifo (struct)                  80
+  HidInputDetectorSharedMemoryEntry (struct)     128
+  HidInputDetectorSharedMemoryFormat (struct)    2048
+  HidUniquePadConfigMutex (struct)               32
+  HidSixAxisSensorUserCalibrationState (struct)  24
+  HidSixAxisSensorUserCalibrationStateAtomicStorage (struct) 32
+  HidSixAxisSensorUserCalibrationStateLifo (struct) 96
+  HidAnalogStickCalibrationStateImpl (struct)    32
+  HidAnalogStickCalibrationStateImplAtomicStorage (struct) 40
+  HidAnalogStickCalibrationStateImplLifo (struct) 112
+  HidUniquePadConfig (struct)                    40
+  HidUniquePadConfigAtomicStorage (struct)       48
+  HidUniquePadConfigLifo (struct)                128
+  HidUniquePadLifo (struct)                      480
+  HidUniquePadSharedMemoryEntry (struct)         1024
+  HidUniquePadSharedMemoryFormat (struct)        16384
+  HidNpadControllerColor (struct)                8
+  HidNpadFullKeyColorState (struct)              12
+  HidNpadJoyColorState (struct)                  20
+  HidNpadCommonState (struct)                    40
+  HidNpadGcState (struct)                        48
+  HidNpadLarkState (struct)                      40
+  HidNpadHandheldLarkState (struct)              48
+  HidNpadLuciaState (struct)                     40
+  HidNpadCommonStateAtomicStorage (struct)       48
+  HidNpadCommonLifo (struct)                     848
+  HidNpadGcTriggerState (struct)                 16
+  HidNpadGcTriggerStateAtomicStorage (struct)    24
+  HidNpadGcTriggerLifo (struct)                  440
+  HidSixAxisSensorState (struct)                 96
+  HidSixAxisSensorStateAtomicStorage (struct)    104
+  HidNpadSixAxisSensorLifo (struct)              1800
+  HidNpadSystemProperties (struct)               8
+  HidNpadSystemButtonProperties (struct)         4
+  HidPowerInfo (struct)                          12
+  XcdDeviceHandle (struct)                       8
+  HidNfcXcdDeviceHandleStateImpl (struct)        24
+  HidNfcXcdDeviceHandleStateImplAtomicStorage (struct) 32
+  HidNfcXcdDeviceHandleState (struct)            96
+  HidNpadInternalState (struct)                  17392
+  HidNpadSharedMemoryEntry (struct)              20480
+  HidNpadSharedMemoryFormat (struct)             204800
+  HidGesturePoint (struct)                       8
+  HidGestureState (struct)                       96
+  HidGestureDummyStateAtomicStorage (struct)     104
+  HidGestureLifo (struct)                        1800
+  HidGestureSharedMemoryFormat (struct)          2048
+  HidConsoleSixAxisSensor (struct)               32
+  HidSharedMemory (struct)                       262144
+  HidSevenSixAxisSensorState (struct)            64
+  HidSevenSixAxisSensorStateEntry (struct)       80
+  HidSevenSixAxisSensorStates (struct)           2672
+  HidSixAxisSensorHandle (union)                 4
+  HidVibrationDeviceHandle (union)               4
+  HidVibrationDeviceInfo (struct)                8
+  HidVibrationValue (struct)                     16
+  HidPalmaConnectionHandle (struct)              8
+  HidPalmaOperationInfo (struct)                 328
+  HidPalmaApplicationSectionAccessBuffer (struct) 256
+  HidPalmaActivityEntry (struct)                 12
+
+== libnx/include/switch/services/set.h ==
+  SetBatteryLot (struct)                         24
+  SetSysNetworkSettings (struct)                 432
+  SetSysLcdBacklightBrightnessMapping (struct)   12
+  SetSysBacklightSettings (struct)               40
+  SetSysBacklightSettingsEx (struct)             44
+  SetSysBluetoothDevicesSettings (struct)        512
+  SetSysFirmwareVersion (struct)                 256
+  SetSysFirmwareVersionDigest (struct)           64
+  SetSysSerialNumber (struct)                    24
+  SetSysDeviceNickName (struct)                  128
+  SetSysUserSelectorSettings (struct)            4
+  SetSysAccountSettings (struct)                 4
+  SetSysAudioVolume (struct)                     8
+  SetSysEulaVersion (struct)                     48
+  SetSysNotificationTime (struct)                8
+  SetSysNotificationSettings (struct)            24
+  SetSysAccountNotificationSettings (struct)     24
+  SetSysTvSettings (struct)                      32
+  SetSysModeLine (struct)                        18
+  SetSysDataBlock (struct)                       28
+  SetSysExtensionBlock (struct)                  128
+  SetSysEdid (struct)                            512
+  SetSysDataDeletionSettings (struct)            8
+  SetSysSleepSettings (struct)                   12
+  SetSysInitialLaunchSettings (struct)           32
+  SetSysPtmFuelGaugeParameter (struct)           24
+  SetSysColor4u8Type (struct)                    4
+  SetSysNxControllerLegacySettings (struct)      41
+  SetSysNxControllerSettings (struct)            1068
+  SetSysConsoleSixAxisSensorAccelerationBias (struct) 12
+  SetSysConsoleSixAxisSensorAngularVelocityBias (struct) 12
+  SetSysConsoleSixAxisSensorAccelerationGain (struct) 36
+  SetSysConsoleSixAxisSensorAngularVelocityGain (struct) 36
+  SetSysAllowedSslHosts (struct)                 256
+  SetSysHostFsMountPoint (struct)                256
+  SetSysBlePairingSettings (struct)              128
+  SetSysConsoleSixAxisSensorAngularVelocityTimeBias (struct) 12
+  SetSysConsoleSixAxisSensorAngularAcceleration (struct) 36
+  SetSysRebootlessSystemUpdateVersion (struct)   64
+  SetSysAccountOnlineStorageSettings (struct)    24
+  SetSysAnalogStickUserCalibration (struct)      16
+  SetSysThemeId (struct)                         128
+  SetSysThemeSettings (struct)                   8
+  SetSysHomeMenuScheme (struct)                  20
+  SetSysButtonConfigSettings (struct)            1448
+  SetSysButtonConfigRegisteredSettings (struct)  1480
+  SetCalAccelerometerOffset (struct)             6
+  SetCalAccelerometerScale (struct)              6
+  SetCalAmiiboEcdsaCertificate (struct)          116
+  SetCalAmiiboEcqvBlsCertificate (struct)        36
+  SetCalAmiiboEcqvBlsKey (struct)                72
+  SetCalAmiiboEcqvBlsRootCertificate (struct)    148
+  SetCalAmiiboEcqvCertificate (struct)           24
+  SetCalAmiiboKey (struct)                       88
+  SetCalAnalogStickFactoryCalibration (struct)   9
+  SetCalAnalogStickModelParameter (struct)       18
+  SetCalBdAddress (struct)                       6
+  SetCalConfigurationId1 (struct)                30
+  SetCalConsoleSixAxisSensorHorizontalOffset (struct) 6
+  SetCalCountryCode (struct)                     3
+  SetCalEccB233DeviceCertificate (struct)        384
+  SetCalEccB233DeviceKey (struct)                88
+  SetCalGameCardCertificate (struct)             1024
+  SetCalGameCardKey (struct)                     312
+  SetCalGyroscopeOffset (struct)                 6
+  SetCalGyroscopeScale (struct)                  6
+  SetCalMacAddress (struct)                      6
+  SetCalRsa2048DeviceCertificate (struct)        576
+  SetCalRsa2048DeviceKey (struct)                584
+  SetCalSpeakerParameter (struct)                90
+  SetCalSslCertificate (struct)                  2052
+  SetCalSslKey (struct)                          312
+  SetCalRegionCode (struct)                      4
+
+== libnx/include/switch/services/pctl.h ==
+  PctlRestrictionSettings (struct)               3
+
+== libnx/include/switch/services/applet.h ==
+  AppletLockAccessor (struct)                    28
+  AppletStorage (struct)                         56
+  AppletHolder (struct)                          64
+  AppletApplication (struct)                     32
+  AppletGpuErrorHandler (struct)                 16
+  AppletAttribute (struct)                       128
+  LibAppletInfo (struct)                         8
+  AppletProcessLaunchReason (struct)             4
+  AppletInfo (struct)                            80
+  AppletIdentityInfo (struct)                    16
+  AppletApplicationAttributeForQuest (struct)    12
+  AppletApplicationAttribute (struct)            32
+  AppletApplicationLaunchProperty (struct)       16
+  AppletApplicationLaunchRequestInfo (struct)    16
+  AppletResourceUsageInfo (struct)               32
+  AppletHookCookie (struct)                      24
+
+== libnx/include/switch/services/vi.h ==
+  ViDisplayName (struct)                         64
+  ViDisplay (struct)                             80
+  ViLayer (struct)                               16
