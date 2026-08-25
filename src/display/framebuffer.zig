@@ -1,0 +1,3 @@
+const Framebuffer = extern struct {
+    
+};
