@@ -1,5 +1,5 @@
 const __mutex = @import("mutex.zig");
-const __types = @import("types.zig");
+const __types = @import("../types.zig");
 const __Result = __types.Result;
 
 const WaiterUnion = extern union { handle: u32, waitable: *Waitable };
