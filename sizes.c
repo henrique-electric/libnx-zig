@@ -23,8 +23,12 @@
  *   aarch64-none-elf-gcc -march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIC \
  *     -D__SWITCH__ -I$DEVKITPRO/libnx/include -c sizes.c -o sizes.o
  *   aarch64-none-elf-gcc -specs=$DEVKITPRO/libnx/switch.specs \
- *     sizes.o -L$DEVKITPRO/libnx/lib -lnx -o sizes.elf
+ *     sizes.o -L$DEVKITPRO/libnx/lib -lnx -Wl,-z,notext -o sizes.elf
  *   elf2nro sizes.elf sizes.nro
+ *
+ * The -Wl,-z,notext above overrides the "-z text" baked into switch.specs;
+ * newer binutils (2.4x) errors with "read-only segment has dynamic
+ * relocations" on switch.specs' PIE layout without it.
  *
  * Then run sizes.nro (e.g. via nxlink -s to stream stdout back over the
  * network, or hbmenu on-console/emulator).
@@ -33,7 +37,7 @@
 #include <switch.h>
 #include <stdio.h>
 
-#include <sys/types>
+#include <sys/types.h>
 
 int main(int argc, char** argv)
 {
@@ -42,6 +46,10 @@ int main(int argc, char** argv)
     printf("\n== libnx/include/switch/types.h ==\n");
     printf("  %-46s %zu\n", "Uuid (struct)", sizeof(Uuid));
     printf("  %-46s %zu\n", "UtilFloat3 (struct)", sizeof(UtilFloat3));
+
+    printf("\n== libnx/include/switch/kernel/mutex.h ==\n");
+    printf("  %-46s %zu\n", "RMutex (struct)", sizeof(RMutex));
+    /* Mutex is a bare _LOCK_T (u32) typedef, no layout to check - skipped */
 
     printf("\n== libnx/include/switch/kernel/rwlock.h ==\n");
     printf("  %-46s %zu\n", "RwLock (struct)", sizeof(RwLock));
@@ -61,11 +69,19 @@ int main(int argc, char** argv)
     printf("\n== libnx/include/switch/kernel/uevent.h ==\n");
     printf("  %-46s %zu\n", "UEvent (struct)", sizeof(UEvent));
 
+    printf("\n== libnx/include/switch/kernel/utimer.h ==\n");
+    printf("  %-46s %zu\n", "UTimer (struct)", sizeof(UTimer));
+
     printf("\n== libnx/include/switch/kernel/wait.h ==\n");
     printf("  %-46s %zu\n", "Waiter (struct)", sizeof(Waiter));
     printf("  %-46s %zu\n", "Waitable (struct)", sizeof(Waitable));
     printf("  %-46s %zu\n", "WaitableNode (struct)", sizeof(WaitableNode));
     /* opaque, no body in header - sizeof() not possible: WaitableMethods */
+
+    printf("\n== libnx/include/switch/arm/thread_context.h ==\n");
+    printf("  %-46s %zu\n", "CpuRegister (union)", sizeof(CpuRegister));
+    printf("  %-46s %zu\n", "FpuRegister (union)", sizeof(FpuRegister));
+    printf("  %-46s %zu\n", "ThreadContext (struct)", sizeof(ThreadContext));
 
     printf("\n== libnx/include/switch/kernel/thread.h ==\n");
     printf("  %-46s %zu\n", "Thread (struct)", sizeof(Thread));
@@ -255,6 +271,9 @@ int main(int argc, char** argv)
     printf("  %-46s %zu\n", "HidPalmaOperationInfo (struct)", sizeof(HidPalmaOperationInfo));
     printf("  %-46s %zu\n", "HidPalmaApplicationSectionAccessBuffer (struct)", sizeof(HidPalmaApplicationSectionAccessBuffer));
     printf("  %-46s %zu\n", "HidPalmaActivityEntry (struct)", sizeof(HidPalmaActivityEntry));
+
+    printf("\n== libnx/include/switch/runtime/pad.h ==\n");
+    printf("  %-46s %zu\n", "PadState (struct)", sizeof(PadState));
 
     printf("\n== libnx/include/switch/services/set.h ==\n");
     printf("  %-46s %zu\n", "SetBatteryLot (struct)", sizeof(SetBatteryLot));
