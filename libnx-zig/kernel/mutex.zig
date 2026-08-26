@@ -9,7 +9,6 @@ pub const RMutex = _LOCK_RECURSIVE_T;
 
 const _LOCK_RECURSIVE_T = extern struct {
     lock: _LOCK_T,
-    thread_tag: u32,
     counter: u32
 };
 
