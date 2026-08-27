@@ -1,14 +1,7 @@
 # libnx.zig
 
 Hand-ported Zig bindings for libnx —
-[switchbrew/libnx](https://github.com/switchbrew/libnx) — split across two files:
-
-- [libnx.zig](libnx.zig) — **Core** (types, Result, kernel sync primitives,
-  a `svc.h` subset) and **Graphics** (native window, framebuffer, `vi`, minimal
-  `nvidia`).
-- [services.zig](services.zig) — **HID** (modern Npad/touch input) and
-  **applet/system** (`am`, `apm`, `set`/`setsys`, `pctl`). Imports
-  `libnx.zig` for shared types (`Result`, etc.) — keep both files together.
+[switchbrew/libnx](https://github.com/switchbrew/libnx)
 
 ## What this is
 
@@ -23,13 +16,13 @@ The exceptions are the handful of things that were `static inline` in the
 original C headers too (`MAKERESULT`, `mutexInit`, `BIT`, ...) — those are
 ported as real (tiny) Zig code, same as they were real (tiny) C code.
 
-## Scope
-
-- **Core**: and all inside kernel, the basis for input management and applet
-- **Graphics**: Nvidia functions and structures
-
 ## ⚠ ABI risk — read before relying on stack/global instances
 
 A few libnx structs are **caller-allocated** (libnx writes into storage
 *you* provide, rather than heap-allocating it for you) and embed
 internal/newlib fields whose exact size depends on your devkitA64/newlib
+
+## Setup
+Just copy the **libnx-zig** directory at the root of the project or at whatever
+you want. There's also an example build.zig for building a project using devkitpro
+toolchain.
