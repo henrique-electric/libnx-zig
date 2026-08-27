@@ -1,7 +1,15 @@
+pinging switch
+Sending Codes.nro, 176128 bytes
+70361 sent (39.95%), 8 blocks
+starting server
+server active ...
 
 == libnx/include/switch/types.h ==
   Uuid (struct)                                  16
   UtilFloat3 (struct)                            12
+
+== libnx/include/switch/kernel/mutex.h ==
+  RMutex (struct)                                8
 
 == libnx/include/switch/kernel/rwlock.h ==
   RwLock (struct)                                32
@@ -21,10 +29,18 @@
 == libnx/include/switch/kernel/uevent.h ==
   UEvent (struct)                                40
 
+== libnx/include/switch/kernel/utimer.h ==
+  UTimer (struct)                                56
+
 == libnx/include/switch/kernel/wait.h ==
   Waiter (struct)                                16
   Waitable (struct)                              32
   WaitableNode (struct)                          16
+
+== libnx/include/switch/arm/thread_context.h ==
+  CpuRegister (union)                            8
+  FpuRegister (union)                            16
+  ThreadContext (struct)                         800
 
 == libnx/include/switch/kernel/thread.h ==
   Thread (struct)                                56
@@ -106,6 +122,35 @@
 == libnx/include/switch/nvidia/graphic_buffer.h ==
   NvSurface (struct)                             88
   NvGraphicBuffer (struct)                       336
+
+== libnx/include/switch/services/btdrv_types.h ==
+  BtdrvAddress (struct)                          6
+  BtdrvClassOfDevice (struct)                    3
+  BtdrvAdapterPropertyOld (struct)               259
+  BtdrvAdapterProperty (struct)                  258
+  BtdrvAdapterPropertySet (struct)               258
+  BtdrvBluetoothPinCode (struct)                 16
+  BtdrvPinCode (struct)                          17
+  BtdrvHidData (struct)                          642
+  BtdrvHidReport (struct)                        702
+  BtdrvPlrStatistics (struct)                    132
+  BtdrvPlrList (struct)                          164
+  BtdrvChannelMapList (struct)                   136
+  BtdrvGattAttributeUuid (struct)                20
+  BtdrvGattId (struct)                           24
+  BtdrvGattAttribute (struct)                    32
+  BtdrvLeConnectionParams (struct)               20
+  BtdrvBleConnectionParameter (struct)           12
+  BtdrvBleAdvertisePacketData (struct)           204
+  BtdrvBleAdvertisement (struct)                 31
+  BtdrvBleAdvertiseFilter (struct)               62
+  BtdrvBleAdvertisePacketParameter (struct)      8
+  BtdrvBleScanResult (struct)                    328
+  BtdrvBleConnectionInfo (struct)                12
+  BtdrvLeEventInfo (struct)                      1024
+  BtdrvBleClientGattOperationInfo (struct)       592
+  BtdrvPcmParameter (struct)                     12
+  BtdrvAudioControlButtonState (struct)          16
 
 == libnx/include/switch/services/hid.h ==
   HidAnalogStickState (struct)                   8
@@ -214,6 +259,14 @@
   HidPalmaApplicationSectionAccessBuffer (struct) 256
   HidPalmaActivityEntry (struct)                 12
 
+== libnx/include/switch/runtime/pad.h ==
+  PadState (struct)                              56
+
+== libnx/include/switch/runtime/devices/console.h ==
+  ConsoleRenderer (struct)                       40
+  ConsoleFont (struct)                           16
+  PrintConsole (struct)                          80
+
 == libnx/include/switch/services/set.h ==
   SetBatteryLot (struct)                         24
   SetSysNetworkSettings (struct)                 432
@@ -314,3 +367,4 @@
   ViDisplayName (struct)                         64
   ViDisplay (struct)                             80
   ViLayer (struct)                               16
+exiting ... 
