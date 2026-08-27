@@ -265,7 +265,7 @@ pub const BtdrvChannelMapList = extern struct {
 
 pub const BtdrvGattAttributeUuid = extern struct {
     size: u32,
-    uuid: u8
+    uuid: [0x10]u8
 };
 
 pub const BtdrvGattId = extern struct {
