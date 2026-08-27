@@ -25,3 +25,20 @@ pub const ThreadContext = extern struct {
     fpsr: u32,                 //< Floating-point status register.
     tpidr: u64                 //< EL0 Read/Write Software Thread ID Register.
 };
+
+pub const ThreadExceptionDump = extern struct {
+    error_desc:   u32,                  //< See \ref ThreadExceptionDesc.
+    pad:          [3]u32,
+    gpu_gprs:     [29]CpuRegister,      //< GPRs 0..28. Note: also contains AArch32 registers.
+    fp:           CpuRegister,          //< Frame pointer.
+    lr:           CpuRegister,          //< Link register.
+    sp:           CpuRegister,          //< Stack pointer.
+    pc:           CpuRegister,          //< Program counter (elr_el1).
+    padding:      u64,
+    fpu_gprs:     [32]FpuRegister,      //< 32 general-purpose NEON registers.
+    pstate:       u32,                  //< pstate & 0xFF0FFE20
+    afsr0:        u32,
+    afsr1:        u32,
+    esr:          u32,
+    far:          CpuRegister           //< Fault Address Register.
+};
