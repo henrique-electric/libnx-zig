@@ -43,6 +43,12 @@ int main(int argc, char** argv)
 {
     (void)argc; (void)argv;
 
+    /* Redirect stdout/stderr to the host running `nxlink -s` so the
+     * printf() output below streams back over the network instead of
+     * going nowhere (there's no TTY on-console without consoleInit()). */
+    socketInitializeDefault();
+    nxlinkStdio();
+
     printf("\n== libnx/include/switch/types.h ==\n");
     printf("  %-46s %zu\n", "Uuid (struct)", sizeof(Uuid));
     printf("  %-46s %zu\n", "UtilFloat3 (struct)", sizeof(UtilFloat3));
@@ -409,6 +415,11 @@ int main(int argc, char** argv)
     printf("  %-46s %zu\n", "ViDisplayName (struct)", sizeof(ViDisplayName));
     printf("  %-46s %zu\n", "ViDisplay (struct)", sizeof(ViDisplay));
     printf("  %-46s %zu\n", "ViLayer (struct)", sizeof(ViLayer));
+
+    fflush(stdout);
+    socketExit();
+
+    
 
     return 0;
 }
