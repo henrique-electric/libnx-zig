@@ -165,6 +165,35 @@ int main(int argc, char** argv)
     printf("  %-46s %zu\n", "NvSurface (struct)", sizeof(NvSurface));
     printf("  %-46s %zu\n", "NvGraphicBuffer (struct)", sizeof(NvGraphicBuffer));
 
+    printf("\n== libnx/include/switch/services/btdrv_types.h ==\n");
+    printf("  %-46s %zu\n", "BtdrvAddress (struct)", sizeof(BtdrvAddress));
+    printf("  %-46s %zu\n", "BtdrvClassOfDevice (struct)", sizeof(BtdrvClassOfDevice));
+    printf("  %-46s %zu\n", "BtdrvAdapterPropertyOld (struct)", sizeof(BtdrvAdapterPropertyOld));
+    printf("  %-46s %zu\n", "BtdrvAdapterProperty (struct)", sizeof(BtdrvAdapterProperty));
+    printf("  %-46s %zu\n", "BtdrvAdapterPropertySet (struct)", sizeof(BtdrvAdapterPropertySet));
+    printf("  %-46s %zu\n", "BtdrvBluetoothPinCode (struct)", sizeof(BtdrvBluetoothPinCode));
+    printf("  %-46s %zu\n", "BtdrvPinCode (struct)", sizeof(BtdrvPinCode));
+    printf("  %-46s %zu\n", "BtdrvHidData (struct)", sizeof(BtdrvHidData));
+    printf("  %-46s %zu\n", "BtdrvHidReport (struct)", sizeof(BtdrvHidReport));
+    printf("  %-46s %zu\n", "BtdrvPlrStatistics (struct)", sizeof(BtdrvPlrStatistics));
+    printf("  %-46s %zu\n", "BtdrvPlrList (struct)", sizeof(BtdrvPlrList));
+    printf("  %-46s %zu\n", "BtdrvChannelMapList (struct)", sizeof(BtdrvChannelMapList));
+    printf("  %-46s %zu\n", "BtdrvGattAttributeUuid (struct)", sizeof(BtdrvGattAttributeUuid));
+    printf("  %-46s %zu\n", "BtdrvGattId (struct)", sizeof(BtdrvGattId));
+    printf("  %-46s %zu\n", "BtdrvGattAttribute (struct)", sizeof(BtdrvGattAttribute));
+    printf("  %-46s %zu\n", "BtdrvLeConnectionParams (struct)", sizeof(BtdrvLeConnectionParams));
+    printf("  %-46s %zu\n", "BtdrvBleConnectionParameter (struct)", sizeof(BtdrvBleConnectionParameter));
+    printf("  %-46s %zu\n", "BtdrvBleAdvertisePacketData (struct)", sizeof(BtdrvBleAdvertisePacketData));
+    printf("  %-46s %zu\n", "BtdrvBleAdvertisement (struct)", sizeof(BtdrvBleAdvertisement));
+    printf("  %-46s %zu\n", "BtdrvBleAdvertiseFilter (struct)", sizeof(BtdrvBleAdvertiseFilter));
+    printf("  %-46s %zu\n", "BtdrvBleAdvertisePacketParameter (struct)", sizeof(BtdrvBleAdvertisePacketParameter));
+    printf("  %-46s %zu\n", "BtdrvBleScanResult (struct)", sizeof(BtdrvBleScanResult));
+    printf("  %-46s %zu\n", "BtdrvBleConnectionInfo (struct)", sizeof(BtdrvBleConnectionInfo));
+    printf("  %-46s %zu\n", "BtdrvLeEventInfo (struct)", sizeof(BtdrvLeEventInfo));
+    printf("  %-46s %zu\n", "BtdrvBleClientGattOperationInfo (struct)", sizeof(BtdrvBleClientGattOperationInfo));
+    printf("  %-46s %zu\n", "BtdrvPcmParameter (struct)", sizeof(BtdrvPcmParameter));
+    printf("  %-46s %zu\n", "BtdrvAudioControlButtonState (struct)", sizeof(BtdrvAudioControlButtonState));
+
     printf("\n== libnx/include/switch/services/hid.h ==\n");
     printf("  %-46s %zu\n", "HidAnalogStickState (struct)", sizeof(HidAnalogStickState));
     printf("  %-46s %zu\n", "HidVector (struct)", sizeof(HidVector));
@@ -274,6 +303,11 @@ int main(int argc, char** argv)
 
     printf("\n== libnx/include/switch/runtime/pad.h ==\n");
     printf("  %-46s %zu\n", "PadState (struct)", sizeof(PadState));
+
+    printf("\n== libnx/include/switch/runtime/devices/console.h ==\n");
+    printf("  %-46s %zu\n", "ConsoleRenderer (struct)", sizeof(ConsoleRenderer));
+    printf("  %-46s %zu\n", "ConsoleFont (struct)", sizeof(ConsoleFont));
+    printf("  %-46s %zu\n", "PrintConsole (struct)", sizeof(PrintConsole));
 
     printf("\n== libnx/include/switch/services/set.h ==\n");
     printf("  %-46s %zu\n", "SetBatteryLot (struct)", sizeof(SetBatteryLot));
