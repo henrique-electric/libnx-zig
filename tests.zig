@@ -13,6 +13,8 @@ const __nv_map = @import("libnx-zig/nvidia/map.zig");
 const __framebuff = @import("libnx-zig/display/framebuffer.zig");
 const __buff_producer = @import("libnx-zig/display/buffer_producer.zig");
 const __disp_types = @import("libnx-zig/display/types.zig");
+const __console = @import("libnx-zig/runtimes/devices/console.zig");
+const __btdrv_types = @import("libnx-zig/services/btdrv_types.zig");
 
 // ---------------------------------------------------------------------------
 // ABI conformance checks: one test per ported struct/union.
@@ -234,4 +236,135 @@ test "Check NvNotification structure size" {
 
 test "Check NvError structure size" {
     try checkSize("nvidia/ioctl.zig :: NvError", "NvError (struct)", @sizeOf(__ioctl.NvError));
+}
+
+// == libnx-zig/services/vi.zig ==
+// NOT wired up yet: vi.zig doesn't compile as of this writing -
+// viGetSession_IApplicationDisplayService() is mid-port with no return type
+// (should be `Service*`, but there's no ported `Service` type in the
+// codebase yet to point it at - see libnx/include/switch/service.h). Add
+// ViDisplayName/ViDisplay/ViLayer tests here once that's fixed.
+
+// == libnx-zig/runtimes/devices/console.zig ==
+// NOTE: PrintConsole is still `opaque {}` on the Zig side (file is WIP), so
+// it has no @sizeOf() to check yet even though structSizes.txt now carries
+// an entry for it (the real header has a concrete body) - add its test once
+// the struct is actually ported.
+
+test "Check ConsoleRenderer structure size" {
+    try checkSize("runtimes/devices/console.zig :: ConsoleRenderer", "ConsoleRenderer (struct)", @sizeOf(__console.ConsoleRenderer));
+}
+
+test "Check ConsoleFont structure size" {
+    try checkSize("runtimes/devices/console.zig :: ConsoleFont", "ConsoleFont (struct)", @sizeOf(__console.ConsoleFont));
+}
+
+// == libnx-zig/services/btdrv_types.zig ==
+
+test "Check BtdrvAddress structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvAddress", "BtdrvAddress (struct)", @sizeOf(__btdrv_types.BtdrvAddress));
+}
+
+test "Check BtdrvClassOfDevice structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvClassOfDevice", "BtdrvClassOfDevice (struct)", @sizeOf(__btdrv_types.BtdrvClassOfDevice));
+}
+
+test "Check BtdrvAdapterPropertyOld structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvAdapterPropertyOld", "BtdrvAdapterPropertyOld (struct)", @sizeOf(__btdrv_types.BtdrvAdapterPropertyOld));
+}
+
+test "Check BtdrvAdapterProperty structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvAdapterProperty", "BtdrvAdapterProperty (struct)", @sizeOf(__btdrv_types.BtdrvAdapterProperty));
+}
+
+test "Check BtdrvAdapterPropertySet structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvAdapterPropertySet", "BtdrvAdapterPropertySet (struct)", @sizeOf(__btdrv_types.BtdrvAdapterPropertySet));
+}
+
+test "Check BtdrvBluetoothPinCode structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBluetoothPinCode", "BtdrvBluetoothPinCode (struct)", @sizeOf(__btdrv_types.BtdrvBluetoothPinCode));
+}
+
+test "Check BtdrvPinCode structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvPinCode", "BtdrvPinCode (struct)", @sizeOf(__btdrv_types.BtdrvPinCode));
+}
+
+test "Check BtdrvHidData structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvHidData", "BtdrvHidData (struct)", @sizeOf(__btdrv_types.BtdrvHidData));
+}
+
+test "Check BtdrvHidReport structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvHidReport", "BtdrvHidReport (struct)", @sizeOf(__btdrv_types.BtdrvHidReport));
+}
+
+test "Check BtdrvPlrStatistics structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvPlrStatistics", "BtdrvPlrStatistics (struct)", @sizeOf(__btdrv_types.BtdrvPlrStatistics));
+}
+
+test "Check BtdrvPlrList structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvPlrList", "BtdrvPlrList (struct)", @sizeOf(__btdrv_types.BtdrvPlrList));
+}
+
+test "Check BtdrvChannelMapList structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvChannelMapList", "BtdrvChannelMapList (struct)", @sizeOf(__btdrv_types.BtdrvChannelMapList));
+}
+
+test "Check BtdrvGattAttributeUuid structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvGattAttributeUuid", "BtdrvGattAttributeUuid (struct)", @sizeOf(__btdrv_types.BtdrvGattAttributeUuid));
+}
+
+test "Check BtdrvGattId structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvGattId", "BtdrvGattId (struct)", @sizeOf(__btdrv_types.BtdrvGattId));
+}
+
+test "Check BtdrvGattAttribute structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvGattAttribute", "BtdrvGattAttribute (struct)", @sizeOf(__btdrv_types.BtdrvGattAttribute));
+}
+
+test "Check BtdrvLeConnectionParams structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvLeConnectionParams", "BtdrvLeConnectionParams (struct)", @sizeOf(__btdrv_types.BtdrvLeConnectionParams));
+}
+
+test "Check BtdrvBleConnectionParameter structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleConnectionParameter", "BtdrvBleConnectionParameter (struct)", @sizeOf(__btdrv_types.BtdrvBleConnectionParameter));
+}
+
+test "Check BtdrvBleAdvertisePacketData structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleAdvertisePacketData", "BtdrvBleAdvertisePacketData (struct)", @sizeOf(__btdrv_types.BtdrvBleAdvertisePacketData));
+}
+
+test "Check BtdrvBleAdvertisement structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleAdvertisement", "BtdrvBleAdvertisement (struct)", @sizeOf(__btdrv_types.BtdrvBleAdvertisement));
+}
+
+test "Check BtdrvBleAdvertiseFilter structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleAdvertiseFilter", "BtdrvBleAdvertiseFilter (struct)", @sizeOf(__btdrv_types.BtdrvBleAdvertiseFilter));
+}
+
+test "Check BtdrvBleAdvertisePacketParameter structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleAdvertisePacketParameter", "BtdrvBleAdvertisePacketParameter (struct)", @sizeOf(__btdrv_types.BtdrvBleAdvertisePacketParameter));
+}
+
+test "Check BtdrvBleScanResult structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleScanResult", "BtdrvBleScanResult (struct)", @sizeOf(__btdrv_types.BtdrvBleScanResult));
+}
+
+test "Check BtdrvBleConnectionInfo structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleConnectionInfo", "BtdrvBleConnectionInfo (struct)", @sizeOf(__btdrv_types.BtdrvBleConnectionInfo));
+}
+
+test "Check BtdrvLeEventInfo structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvLeEventInfo", "BtdrvLeEventInfo (struct)", @sizeOf(__btdrv_types.BtdrvLeEventInfo));
+}
+
+test "Check BtdrvBleClientGattOperationInfo structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvBleClientGattOperationInfo", "BtdrvBleClientGattOperationInfo (struct)", @sizeOf(__btdrv_types.BtdrvBleClientGattOperationInfo));
+}
+
+test "Check BtdrvPcmParameter structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvPcmParameter", "BtdrvPcmParameter (struct)", @sizeOf(__btdrv_types.BtdrvPcmParameter));
+}
+
+test "Check BtdrvAudioControlButtonState structure size" {
+    try checkSize("services/btdrv_types.zig :: BtdrvAudioControlButtonState", "BtdrvAudioControlButtonState (struct)", @sizeOf(__btdrv_types.BtdrvAudioControlButtonState));
 }
