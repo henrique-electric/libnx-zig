@@ -300,6 +300,7 @@ pub const BtdrvBleConnectionParameter = extern struct {
     max_interval:   u16,
     min_len:        u16,
     max_len:        u16,
+    slave_lat:      u16,
     supervision:    u16
 };
 
