@@ -21,3 +21,8 @@ ported as real (tiny) Zig code, same as they were real (tiny) C code.
 A few libnx structs are **caller-allocated** (libnx writes into storage
 *you* provide, rather than heap-allocating it for you) and embed
 internal/newlib fields whose exact size depends on your devkitA64/newlib
+
+## Setup
+Just copy the **libnx-zig** directory at the root of the project or at whatever
+you want. There's also an example build.zig for building a project using devkitpro
+toolchain.
