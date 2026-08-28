@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/kernel/thread.h` ("Multi-threading support").
+//! Original author(s): plutoo.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const __wait = @import("wait.zig");
 const __types = @import("../types.zig");
 const ThreadContext = @import("../arm/thread_context.zig").ThreadContext;

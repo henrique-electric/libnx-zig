@@ -26,3 +26,20 @@ internal/newlib fields whose exact size depends on your devkitA64/newlib
 Just copy the **libnx-zig** directory at the root of the project or at whatever
 you want. There's also an example build.zig for building a project using devkitpro
 toolchain.
+
+## Credits
+
+Every declaration under `libnx-zig/` is ported from a specific C header in
+[switchbrew/libnx](https://github.com/switchbrew/libnx) (mirrored here under
+[`libnx/include`](libnx/include) for reference). Each `.zig` file carries a
+`//!` header naming the upstream header and its original `@author`(s), e.g.:
+
+```zig
+//! Zig port of libnx's `switch/sf/hipc.h` ("Horizon Inter-Process Communication protocol").
+//! Original author(s): fincs, SciresM.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+```
+
+See [LICENSE-libnx.md](LICENSE-libnx.md) for the full upstream license text
+and the consolidated list of credited authors.

@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/display/framebuffer.h` ("Framebuffer wrapper object, providing support for software rendered graphics.").
+//! Original author(s): fincs.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub inline fn RGBA8(r: anytype, g: anytype, b: anytype, a: anytype) @TypeOf((((r & @as(c_int, 0xff)) | ((g & @as(c_int, 0xff)) << @as(c_int, 8))) | ((b & @as(c_int, 0xff)) << @as(c_int, 16))) | ((a & @as(c_int, 0xff)) << @as(c_int, 24))) {
     return (((r & @as(c_int, 0xff)) | ((g & @as(c_int, 0xff)) << @as(c_int, 8))) | ((b & @as(c_int, 0xff)) << @as(c_int, 16))) | ((a & @as(c_int, 0xff)) << @as(c_int, 24));
 }

@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/runtime/devices/console.h` ("Framebuffer text console.").
+//! Original author(s): yellows8, WinterMute.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub const PrintConsole = opaque {};
 
 /// Renderer interface for the console.

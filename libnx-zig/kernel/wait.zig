@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/kernel/wait.h` ("User mode synchronization primitive waiting operations.").
+//! Original author(s): plutoo.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const __mutex = @import("mutex.zig");
 const __types = @import("../types.zig");
 const __Result = __types.Result;

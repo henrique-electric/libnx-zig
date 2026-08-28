@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/display/types.h` ("Definitions for Android-related types and enumerations.").
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const __types = @import("../types.zig");
 
 pub const PixelFormat = enum(u32) {

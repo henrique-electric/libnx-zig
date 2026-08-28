@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/types.h` ("Various system types.").
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub const Result = u32;
 
 pub const ThreadFunc = *fn(*anyopaque) void;

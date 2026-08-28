@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/runtime/hosversion.h` ("Horizon OS (HOS) version detection utilities.").
+//! Original author(s): fincs.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub fn MAKEHOSVERSION(_major: anytype, _minor: anytype, _micro: anytype) @TypeOf(((u32)(_major) << 16) | ((u32)(_minor) << 8) | (u32)(_micro)) {
     return ((u32)(_major) << 16) | ((u32)(_minor) << 8) | (u32)(_micro);
 }

@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/services/btdrv_ids.h` ("Bluetooth SIG assigned number definitions.").
+//! Original author(s): ndeadly.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 
 // Extract \ref BtdrvAppearanceCategoryType from \ref BtdrvAppearanceType.
 pub fn APPEARANCE_CATEGORY(x: anytype) @TypeOf((x & 0xFFC0) >> 6) {

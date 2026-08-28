@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/sf/hipc.h` ("Horizon Inter-Process Communication protocol").
+//! Original author(s): fincs, SciresM.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const __tls = @import("../arm/tls.zig");
 const __result = @import("../result.zig");
 const __svc = @import("../kernel/svc.zig");

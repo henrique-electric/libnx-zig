@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/nvidia/fence.h`.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const __ioctl = @import("ioctl.zig");
 const Result = @import("../types.zig").Result;
 

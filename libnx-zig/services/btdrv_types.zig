@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/services/btdrv_types.h` ("Bluetooth driver (btdrv) service types (see btdrv.h for the rest).").
+//! Original author(s): yellows8, ndeadly.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const btdrv_ids = @import("btdrv_ids.zig");
 const BIT = @import("../types.zig").BIT;
 

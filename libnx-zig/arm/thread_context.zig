@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/arm/thread_context.h` ("AArch64 register dump format and related definitions.").
+//! Original author(s): TuxSH.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub const BIT = @import("../types.zig").BIT;
 
 pub const RegisterGroup = enum(u32) {

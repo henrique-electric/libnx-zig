@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/nvidia/address_space.h`.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const iova_t = @import("types.zig").iova_t;
 const Result = @import("../types.zig").Result;
 const NvKind = @import("types.zig").NvKind;

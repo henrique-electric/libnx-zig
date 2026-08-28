@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/result.h` ("Switch result code tools.").
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub inline fn R_SUCCEEDED(res: u32) u32 {
     return ((res) == 0);
 }

@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/kernel/mutex.h` ("Mutex synchronization primitive.").
+//! Original author(s): plutoo.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub const _LOCK_T = u32;
 
 /// Mutex datatype, defined in newlib.

@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/nvidia/gpu_channel.h`.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const __event = @import("../kernel/event.zig");
 const __channel = @import("channel.zig");
 const __fence = @import("fence.zig");

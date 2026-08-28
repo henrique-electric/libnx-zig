@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/runtime/nxlink.h` ("Netloader (nxlink) utilities").
+//! Original author(s): WinterMute.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub const in_addr = opaque {};
 
 pub extern var __nxlink_host: in_addr;

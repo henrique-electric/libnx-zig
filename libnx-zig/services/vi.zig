@@ -1,3 +1,8 @@
+//! Zig port of libnx's `switch/services/vi.h` ("Display (vi:*) service IPC wrapper.").
+//! Original author(s): yellows8.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const __types = @import("../types.zig");
 const Result = @import("../types.zig").Result;
 

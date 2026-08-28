@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/kernel/svc.h` ("Wrappers for kernel syscalls.").
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 const thread_context = @import("../arm/thread_context.zig");
 const BIT = @import("../types.zig").BIT;
 

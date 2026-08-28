@@ -1,3 +1,7 @@
+//! Zig port of libnx's `switch/nvidia/types.h`.
+//! Copyright (c) 2017-2018 libnx Authors. Licensed under the ISC License
+//! (switchbrew/libnx) -- see /LICENSE-libnx.md at the repo root.
+
 pub const iova_t = u64;
 
 pub const NvLayout = enum(i32) {
