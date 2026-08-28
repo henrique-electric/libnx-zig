@@ -1,5 +1,7 @@
 const __wait = @import("wait.zig");
 const __types = @import("../types.zig");
+const ThreadContext = @import("../arm/thread_context.zig").ThreadContext;
+
 const ThreadFunc = __types.ThreadFunc;
 const Handle = __types.Handle;
 // ==== thread_context.h ====
