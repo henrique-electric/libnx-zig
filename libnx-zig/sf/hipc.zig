@@ -280,6 +280,18 @@ pub inline fn hipcMakeRequest(base: *anyopaque, meta: HipcMetadata) HipcRequest 
     return hipcCalcRequestLayout(meta, p);
 }
 
+// Zig has no variadic macros, so the original `hipcMakeRequestInline(_base,...)`
+// (which expands to `hipcMakeRequest(_base, (HipcMetadata){ __VA_ARGS__ })`)
+// becomes a comptime-generic wrapper: pass an anonymous struct literal with
+// just the fields you care about (e.g. `.{ .num_data_words = 4 }`) and the
+// rest are filled in from HipcMetadata's own defaults.
+pub inline fn hipcMakeRequestInline(base: *anyopaque, fields: anytype) HipcRequest {
+    var meta: HipcMetadata = .{};
+    inline for (@typeInfo(@TypeOf(fields)).@"struct".fields) |f|
+        @field(meta, f.name) = @field(fields, f.name);
+    return hipcMakeRequest(base, meta);
+}
+
 pub inline fn hipcParseRequest(base: *anyopaque) HipcParsedRequest {
     // Parse message header
     var p: [*]u8 = @ptrCast(base);
